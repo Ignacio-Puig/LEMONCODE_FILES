@@ -1,0 +1,243 @@
+:root{
+  --primaryColor: white;
+  --secondaryColor: black;
+  --accentColor: lightgrey;
+}
+
+@font-face {
+  font-family: 'myFont';
+  src: url('' );
+}
+/* me puedes explicar como funciona esto */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{font-size:16px }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+font-family: Montserrat, Arial, Helvetica, sans-serif ;  
+font-size: 100%;
+/* width: 1280px; */
+margin: 0 auto;
+max-width: 1280px;
+background: var(--primaryColor);
+}
+
+.container{
+  padding: 20px;
+  width: 100%;
+  
+}
+
+.navContainer{
+
+  display: flex;
+  flex-wrap: wrap; /* permite que los elemento se ajusten */
+
+  height: 90px;
+  width: 100%;
+  padding: 10px;
+  /*position: fixed;*/
+  background-color: var(--primaryColor);
+  margin-bottom: 10px;
+  top: 0px;
+  left: 0px;
+  
+  justify-content:  space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.navMenuIzquierda{
+  width: 10%;
+  height: 90px;
+  align-content: center;
+}
+
+.navMenuCentral{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 65%;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.headerIcon{
+  width: auto;
+  height:40%;
+}
+
+.navMenuDerecha{
+  width: 15%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a:hover{
+  color: red;
+  font-weight: bold;
+}
+
+.container hr{
+  border: 2px solid black;
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.clearfix{
+  clear: both;
+}
+
+.titulo{
+  background: var(--primaryColor);
+  margin-left: 80px;
+  color: var(--secondaryColor);
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.grid-container{
+  background: var(--primaryColor);
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+  flex-wrap: wrap;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  background-color:var(--primaryColor);
+  padding: 10px;
+}
+
+.box:hover{
+  background: red;
+}
+
+
+.box__image{
+  border-radius: 10px;
+
+}
+
+.box-L2{
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+font-size: 14px;
+}
+
+.gridItemL2-precio{
+  font-weight: bold;
+}
+
+.box:nth-child(1) {
+  order: 5;   }
+.box:nth-child(2) {
+ order: 6;    }
+.box:nth-child(3) {
+  order: 1;   }
+.box:nth-child(4) {
+  order: 3;   }
+.box:nth-child(5) {
+  order: 4;   }
+.box:nth-child(6) {
+  order: 2;   }
+
+
+.footerContainer{
+height: 120px;
+display: flex;
+align-content: center;
+flex-flow: row wrap;
+justify-content: space-between;
+line-height: 100%;
+background: var(--secondaryColor);
+color: var(--primaryColor);
+padding: 30px;
+font-size: 16px;
+}
+
+.footerGroup{
+display: flex;
+align-items: center;
+height: 120px;
+border-bottom: 1px solid var(--primaryColor);
+text-decoration: none;
+}
+
+.footerGroup:hover{color: red;font-weight: bold;}
+
+.footerIconContainer{
+  display: flex;
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.footerIcon{
+  height: 35px;
+  width: 35px;
+}
+
+@media (max-width: 920px){
+  .navMenuCentral{display: none;}
+  .navMenuDerecha{display: none;}
+
+  .grid-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap:20px}
+
+  .box img{
+    width: 50%;
+  }
+
+  .footerContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footerGroup{
+    width: 100%;
+    height: auto;
+    padding:10px;
+  }
+  .titulo{font-size: 2rem;}
+  .gridItemL2-precio{font-size: 1rem;}
+  .box-L2{font-size: 0.8rem;}
+  
+  .headerIcon, .footerIcon{
+    max-width: 100%;
+    height: auto;
+  }
+
+}
